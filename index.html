@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Imprints.io — Coming Soon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0c1e54;
+      font-family: 'Share Tech Mono', monospace;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .logo {
+      max-width: 220px;
+      margin-bottom: 2rem;
+      animation: flicker 3s infinite alternate, fadeIn 1s ease-in-out forwards;
+      opacity: 0;
+    }
+
+    h1, p, .coming-soon, form, .footer {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeSlideIn 1s ease-out forwards;
+    }
+
+    h1 { animation-delay: 0.4s; }
+    p { animation-delay: 0.6s; }
+    .coming-soon { animation-delay: 0.8s; }
+    form { animation-delay: 1s; }
+    .footer { animation-delay: 1.2s; }
+
+    h1 {
+      font-size: 2.8rem;
+      color: #248a91;
+      text-shadow: 0 0 5px #248a91;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #c0d7ff;
+      margin-bottom: 1.5rem;
+    }
+
+    .coming-soon {
+      font-size: 1.2rem;
+      color: #ffffff;
+      text-shadow: 0 0 5px #248a91;
+      animation: pulse 2s infinite;
+      margin-bottom: 2rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    input[type="email"] {
+      padding: 0.7rem 1rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      width: 250px;
+      font-family: 'Share Tech Mono', monospace;
+      transition: transform 0.3s ease;
+    }
+
+    input[type="email"]:focus {
+      transform: scale(1.05);
+      outline: none;
+    }
+
+    button {
+      padding: 0.6rem 1.2rem;
+      font-size: 1rem;
+      background-color: #248a91;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s, box-shadow 0.3s;
+      font-family: 'Share Tech Mono', monospace;
+    }
+
+    button:hover {
+      background-color: #1a6775;
+      box-shadow: 0 0 10px #248a91, 0 0 20px #248a91;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 1rem;
+      font-size: 0.9rem;
+      color: #7faedc;
+    }
+
+    /* Animations */
+    @keyframes flicker {
+      0% { opacity: 1; }
+      50% { opacity: 0.85; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeSlideIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <img src="Imprintslogo.png" alt="Imprints Logo" class="logo" />
+  <h1>Imprints.io</h1>
+  <p>Every Click Leaves an IMPRINT</p>
+  <div class="coming-soon">Coming Soon...</div>
+
+  <form action="https://formspree.io/f/mgvabkvy" method="POST">
+    <input type="email" name="email" placeholder="Enter your email to join the waitlist" required />
+    <button type="submit">Notify Me</button>
+  </form>
+
+  <div class="footer">
+    &copy; 2025 Imprints.io by Rachael Evangeline
+  </div>
+</body>
+</html>
